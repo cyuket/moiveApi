@@ -1,0 +1,39 @@
+body {
+	background-image: url(../images/back11.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+
+}
+.main{
+	background-color: black;
+	margin: 5%;
+	color: white;
+	width: 95%;
+	height: 600px;
+}
+#img{
+	margin-left: 5%;
+	margin-top: 5%;
+	float: left;
+
+}
+.details{
+	position: relative;
+	top: 15%;
+	margin-left: 50%;
+	width: 200%;
+	
+}
+#rating{
+	color: gold;
+	margin-left: 5px;
+}
+#overview{
+	margin-top: 80px;
+	margin-left: 50%;
+}
+#line {
+	height: 5px;
+	background-color : red;
+	width:50%;
+	margin-left:50%;

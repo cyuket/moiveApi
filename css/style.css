@@ -1,0 +1,70 @@
+body{
+	background-color: #000B15;
+	color: #999999;
+}
+#sideNav{
+    height: 100%;
+    width: auto;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+.sideNav ul li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    color: #999999;
+}
+
+li a {
+    display: block;
+    color: #999999;
+    padding: 12px 10px 8px 14px;
+    text-decoration: none;
+}
+.profile{
+	margin: 16px;
+	margin-left: 70px;
+	height: 10%;
+	border-right: 0.5px solid #bbb; 
+}
+#badge{
+	background-color: red; 
+	border-radius: 10px;
+	
+}
+#trends{
+	margin-left: 20%;
+	color: white;
+	width: 100%;
+}
+#search{
+	background-color:#1A4D21;
+	width: 40px;
+	height: 30px;
+	border-radius:15px;
+	text-align: center;
+	margin-left: 60%;
+}
+.active {
+    background-color: #1A4D21;
+    color: white;
+}
+#content{
+	margin-left: 20%;
+	width: 80%;
+	
+}
+#rating{
+	color: gold;
+	margin-left: 5px;
+
+}
+#rate{
+	color:#999999; 
+}
+#content a {
+	color:white;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="news">
+<head>
+	<title>movies</title>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script type="text/javascript" src="angular.min.js"></script>
+</head>
+<body class="container">
+	<div id="sideNav" class="sideNav">
+        
+        <div class="profile">
+        	<img src="images/profile.jpg" class="rounded-circle"  width="40" height="40">
+        	<span class="badge badge-light" id="badge">24</span>
+        	<i style="margin-left: 5px;">Hy, femi</i>
+        </div>
+        <ul style="border-bottom: 0.5px solid #bbb;" >
+            <li><a href="#"> <i></i>My Collection</a></li>
+            <li><a href="#" class="active"> <i></i>Trending Movies</a></li>
+            <li><a href="#"> <i></i>History  </a></li>
+            <li><a href="#"> <i></i>New Movie</a></li>
+            <li><a href="#"> <i></i> Subscription</a></li>
+            <li><a href="#"> <i></i> watch letter</a></li>
+        
+        </ul>
+        <ul>
+            <li><a href="#"> <i></i>Recommendations</a></li>
+            <li><a href="#"> <i></i>Top Genre</a></li>
+            <li><a href="#"> <i></i>Artist of the Month</a></li>
+            <li><a href="#"> <i></i>Quote of the Week</a></li>
+        </ul>
+    </div>
+    <div id="trends"class="row">
+    	<h2>Trending Movies </h2>
+    	<div id="search"><i class="fa fa-search"></i></div>
+    </div>
+    	<div ng-controller="labController" class="row" id="content">
+           	<div ng-repeat = "movies in movies" class="col-md-3" >
+           		<a href="details.html" target="_blank" ng-click="getId(movies.id)" value=detail>
+           			<img src="https://image.tmdb.org/t/p/w500{{movies.poster_path}}" width="150px" height="270px"> <br>
+					{{movies.title}}  <br>
+
+					<span id="rate">Rating: <span style="color: white;">{{movies.vote_average}} </span><i id="rating" class="fa fa-star"></i></div> </span>
+				</a>
+				</div>
+     
+   		</div>
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script> -->
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
