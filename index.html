@@ -21,12 +21,17 @@
         	<i style="margin-left: 5px;">Hy, femi</i>
         </div>
         <ul style="border-bottom: 0.5px solid #bbb;" >
-            <li><a href="#"> <i></i>My Collection</a></li>
-            <li><a href="#" class="active"> <i></i>Trending Movies</a></li>
-            <li><a href="#"> <i></i>History  </a></li>
-            <li><a href="#"> <i></i>New Movie</a></li>
-            <li><a href="#"> <i></i> Subscription</a></li>
-            <li><a href="#"> <i></i> watch letter</a></li>
+            <li><a href="index.html"> <i></i>My Collection</a></li>
+            <li><a href="index.html" class="active"> <i></i>Popular Movies</a></li>
+            <li><a href="html/latestMovie.html"> <i></i>latest movies</a></li>
+            <li><a href="html/nowPlaying.html"> <i></i>Now playing</a></li>
+            <li><a href="html/topRated.html"> <i></i>Top Rated</a></li>
+            <li><a href="html/upComing.html"> <i></i>Upcoming Movies</a></li>
+            <li><a href="html/topRatedTV.html"> <i></i>Top Rated TV Show</a></li>
+            <li><a href="html/popularTvShow.html"> <i></i>Popular TV Show</a></li>
+            <li><a href="html/onAirTv.html"> <i></i>On the Air TV Shows</a></li>
+            <li><a href="html/airingTvShow.html"> <i></i>Airing Today TV Shows</a></li>
+            <li><a href="html/popularPeople.html"> <i></i>Popular People</a></li>
         
         </ul>
         <ul>
@@ -35,10 +40,21 @@
             <li><a href="#"> <i></i>Artist of the Month</a></li>
             <li><a href="#"> <i></i>Quote of the Week</a></li>
         </ul>
-    </div>
-    <div id="trends"class="row">
-    	<h2>Trending Movies </h2>
-    	<div id="search"><i class="fa fa-search"></i></div>
+    <div id="trends">
+        <h2>Top Rated Movies </h2>
+        <div id="search" class="form-group">
+
+        <form class="form-inline" action="/action_page.php">
+            <div class="input-group">
+                  
+                <input type="text" class="form-control" placeholder="Search">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fa fa-search"></i></span>
+                </div>
+            </div> 
+        </form>
+            
+        </div>
     </div>
     	<div ng-controller="labController" class="row" id="content">
            	<div ng-repeat = "movies in movies" class="col-md-3" >
