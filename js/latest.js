@@ -5,7 +5,7 @@ news.controller('labController', [
       $scope.model={};
       $scope.movies = [];
 
-    var url = 'https://api.themoviedb.org/3/movie/latest?api_key=ea12c869f716552bef3493abf72c3617&language=en-US'
+    var url = 'https://api.themoviedb.org/3/movie/latest?api_key=ea12c869f716552bef3493abf72c3617&language=en-US&page=1'
     //var url = 'https://api.themoviedb.org/3/movie/popular?api_key=ea12c869f716552bef3493abf72c3617&language=en-US&page=1';
           $http.get(url)
           .then(function(success){

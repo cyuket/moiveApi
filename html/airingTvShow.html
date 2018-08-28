@@ -37,8 +37,8 @@
     </div>
     
     
-    <div id="trends"class="row">
-        <h2>Airing Tv Shows</h2>
+    <div id="trends" ng-controller="labController">
+        <h2>Airing Tv Show</h2>
         <div id="search" class="form-group">
 
         <form class="form-inline" action="/action_page.php">
@@ -50,8 +50,11 @@
                 </div>
             </div> 
         </form>
-            
-        </div>    </div>
+           <div ng-show="model.search" ng-repeat="t in movies.title | filter:model.search">
+            <span >{{t}}</span>
+        </div> 
+        </div>
+    </div>
         <div ng-controller="labController" class="row" id="content">
             <div ng-repeat = "movies in movies" class="col-md-3" >
                 <a href="details.html" target="_blank" ng-click="getId(movies.id)" value=detail>
