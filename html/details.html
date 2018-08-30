@@ -14,34 +14,9 @@
 </head>
 <body class="container" ng-controller="labController">
 	<div class="main" >
-		asdfgnjm
-        	<input type="button" class="btn btn-success" value="Detail">
-        	<div class="col-md-5" ng-show="model.detail">
-        <h3>Detail</h3>
-        <div ng-show="model.detail.error" class="alert alert-danger"><h3>Error</h3> {{model.detail.message}}</div>
-
-        <div ng-show="model.detail">
-            <h4>Name</h4>
-            {{model.detail.title}}
-        </div>
+		
         
-        <div>
-            <h4>Description</h4>
-            {{model.detail.vote_count}}
-            dsjxk
-        </div>
         
-        <div>
-            <h4>URL</h4>
-            <a ng-href="{{model.detail.html_url}}" target="_blank">{{model.detail.html_url}}</a>
-        </div>
-        
-        <h4>Raw Data</h4>
-        <pre>{{model.detail | json}}</pre>
-    </div>
-    </div>
-        
-        <!--
 	        <div ng-show="model.detail" >
 
 	          <img src="https://image.tmdb.org/t/p/w500{{detail.poster_path}}" width="400px" height="500px" id="img">
@@ -69,7 +44,7 @@
 	        	{{detail.overview}}
 	        	
 	        </div> 	
-	          {{idd}}-->
+	          
 	         
 	       
 

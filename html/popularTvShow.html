@@ -9,61 +9,91 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
   <link rel="stylesheet" type="text/css" href="../css/style.css">
   <script type="text/javascript" src="../angular.min.js"></script>
 </head>
-<body class="container">
-    <div id="sideNav" class="sideNav">
-        
-        <div class="profile">
-            <h2 style="color: white">Movies.com</h2>
-        </div>
-        <ul style="border-bottom: 0.5px solid #bbb;" >
-             <li><a href="../index.html"> <i></i>My Collection</a></li>
-            <li><a href="../index.html" > <i></i>Popular Movies</a></li>
-            <li><a href="../html/latestMovie.html"> <i></i>latest movies</a></li>
-            <li><a href="../html/nowPlaying.html"> <i></i>Now playing</a></li>
-            <li><a href="../html/topRated.html"> <i></i>Top Rated</a></li>
-            <li><a href="../html/upComing.html"> <i></i>Upcoming Movies</a></li>
-            <li><a href="../html/topRatedTV.html"> <i></i>Top Rated TV Show</a></li>
-            <li><a href="../html/popularTvShow.html" class="active"> <i></i>Popular TV Show</a></li>
-            <li><a href="../html/onAirTv.html"> <i></i>On the Air TV Shows</a></li>
-            <li><a href="../html/airingTvShow.html"> <i></i>Airing Today TV Shows</a></li>
-            <li><a href="../html/popularPeople.html"> <i></i>Popular People</a></li>
-        
-        </ul>
-       
-    </div>
-    
-    
-    <div id="trends" ng-controller="labController">
-        <h2>Popular Tv Shows </h2>
-        <div id="search" class="form-group">
+<body ng-controller="labController">
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h2 style="color: white">Movies.com</h2>
+            </div>
 
-        <form class="form-inline" action="/action_page.php">
-            <div class="input-group">
-                  
-                <input type="text" class="form-control" placeholder="Search">
-                <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="fa fa-search"></i></span>
-                </div>
-            </div> 
-        </form>
-           <div ng-show="model.search" ng-repeat="t in movies.title | filter:model.search">
-            <span >{{t}}</span>
-        </div> 
+            <ul class="list-unstyled components">
+                <li><a href="../index.html"> <i></i>My Collection</a></li>
+                <li><a href="../index.html" > <i></i>Popular Movies</a></li>
+                <li><a href="../html/latestMovie.html"> <i></i>latest movies</a></li>
+                <li><a href="../html/nowPlaying.html"> <i></i>Now playing</a></li>
+                <li><a href="../html/topRated.html"> <i></i>Top Rated</a></li>
+                <li><a href="../html/upComing.html"> <i></i>Upcoming Movies</a></li>
+                <li><a href="../html/topRatedTV.html"> <i></i>Top Rated TV Show</a></li>
+                <li><a href="../html/popularTvShow.html" id="act"> <i></i>Popular TV Show</a></li>
+                <li><a href="../html/onAirTv.html"> <i></i>On the Air TV Shows</a></li>
+                <li><a href="../html/airingTvShow.html" > <i></i>Airing Today TV Shows</a></li>
+                <li><a href="../html/popularPeople.html"> <i></i>Popular People</a></li>
+            
+            </ul>
+
+            
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+            
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <span>Menu</span>
+                    </button>
+                    <h2 style="margin-left: 10px; color: black">Popular Tv Show </h2>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                        <span>Search</span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                       <ul class="nav navbar-nav ml-auto">
+                        <form class="form-inline">
+                        <div class="input-group">
+                      
+                            <input type="text" class="form-control" placeholder="Search" ng-model="search.name">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-search"></i></span>
+                            </div>
+                        </div> 
+                        </form>
+                        </ul> 
+                    </div>
+                </div></nav>
+                 <div class="row" id="content">
+                <div ng-repeat = "movies in movies | filter:search" class="col-md-3" >
+                    <a href="details.html" target="_blank" ng-click="showDetails(movies.id)" value=detail>
+                        <img src="https://image.tmdb.org/t/p/w500{{movies.poster_path}}" width="150px" height="270px"> <br>
+                        {{movies.name}}  <br>
+
+
+
+                        <span id="rate">Rating: <span style="color: white;">{{movies.vote_average}} </span><i id="rating" class="fa fa-star"></i></span>
+                    </a>
+                    <input type="button" class="btn btn-success" ng-click="showDetails(movies.id)" value="Detail">
+                </div>        
+            </div>   
         </div>
     </div>
-        <div ng-controller="labController" class="row" id="content">
-            <div ng-repeat = "movies in movies" class="col-md-3" >
-                <a href="details.html" target="_blank" ng-click="getId(movies.id)" value=detail>
-                    <img src="https://image.tmdb.org/t/p/w500{{movies.poster_path}}" width="150px" height="270px"> <br>
-                    {{movies.name}}  <br>
 
-                    <span id="rate">Rating: <span style="color: white;">{{movies.vote_average}} </span><i id="rating" class="fa fa-star"></i></div> </span>
-                </a>
-                </div>
-     
-        </div>
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+   
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
         <script type="text/javascript" src="../js/PopularTv.js"></script>
 </body>
