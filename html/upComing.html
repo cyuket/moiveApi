@@ -25,12 +25,10 @@
             <ul class="list-unstyled components">
                 <li><a href="../index.html"> <i></i>My Collection</a></li>
                 <li><a href="../index.html" > <i></i>Popular Movies</a></li>
-                <li><a href="../html/latestMovie.html"> <i></i>latest movies</a></li>
                 <li><a href="../html/nowPlaying.html"> <i></i>Now playing</a></li>
                 <li><a href="../html/topRated.html"> <i></i>Top Rated</a></li>
                 <li><a href="../html/upComing.html" id="act"> <i></i>Upcoming Movies</a></li>
                 <li><a href="../html/topRatedTV.html"> <i></i>Top Rated TV Show</a></li>
-                <li><a href="../html/popularTvShow.html"> <i></i>Popular TV Show</a></li>
                 <li><a href="../html/onAirTv.html"> <i></i>On the Air TV Shows</a></li>
                 <li><a href="../html/airingTvShow.html"> <i></i>Airing Today TV Shows</a></li>
                 <li><a href="../html/popularPeople.html"> <i></i>Popular People</a></li>
@@ -73,7 +71,7 @@
                      
                     <div ng-repeat = "movies in movies | filter:search" class="col-md-3" ng-hide="showMe">
                         <a >
-                        <img src="https://image.tmdb.org/t/p/w500{{movies.poster_path}}" width="150px" height="270px"> <br>
+                        <img src="https://image.tmdb.org/t/p/w500{{movies.poster_path}}" width="150px" height="270px" alt="Image not Found"> <br>
                         {{movies.title}}  <br>
 
 
@@ -88,7 +86,7 @@
                            <em style="margin-left: 3px;">{{detail.tagline}}</em>  
                    
                         </div>
-                       <img src="https://image.tmdb.org/t/p/w500{{detail.poster_path}}" width="400px" height="500px" id="img" style="float: center;">
+                       <img src="https://image.tmdb.org/t/p/w500{{detail.poster_path}}" width="400px" height="500px" id="img" style="float: center;" alt="Image not Found">
                        <p>
                         <div style=" margin-left">
                             <h2>Overview</h2>
