@@ -98,7 +98,13 @@
                         <button ng-click="myFunc()" class="btn btn-success">Back</button> 
                    </div>
                 </div>        
-            </div>   
+            <ul class="pagination" ng-hide="showMe">
+                  <li class="page-item"><button class="page-link" ng-click="previous()">Previous</button></li>
+                  
+                  <li class="page-item"><button class="page-link" ng-click="next()">Next</button></li>
+                </ul>          
+            </div>
+
         </div>
     </div>
 

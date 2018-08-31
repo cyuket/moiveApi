@@ -98,7 +98,13 @@
                         <button ng-click="myFunc()" class="btn btn-success">Back</button> 
                    </div>
                 </div>        
-            </div>   
+            <ul class="pagination">
+                  <li class="page-item"><button class="page-link" ng-click="previous()">Previous</button></li>
+                  
+                  <li class="page-item"><button class="page-link" ng-click="next()">Next</button></li>
+                </ul>          
+            </div>
+
         </div>
     </div>
 
@@ -106,7 +112,7 @@
     <!-- jQuery CDN - Slim version (=without AJAX) -->
    
 
-    <script type="text/javascript">
+    <script type="text/javascript" ng-hide="showMe">
         $(document).ready(function () {
             $('#sidebarCollapse').on('click', function () {
                 $('#sidebar').toggleClass('active');

@@ -36,6 +36,41 @@ news.controller('labController', [
       $scope.myFunc = function() {
         $scope.showMe = false;
     }
+     function next() {
+      // body...
+      $scope.incre = ++i;
+      
+      j = $scope.incre;
+      var url = 'https://api.themoviedb.org/3/tv/popular?api_key=ea12c869f716552bef3493abf72c3617&language=en-US&page='+$scope.incre;
+    
+          $http.get(url)
+          .then(function(success){
+              $scope.movies = success.data.results;
+              $scope.show = false;            
+              console.log(success.data.results);
+          },function(error){
+              console.log(error);
+              $scope.show = false;
+          });
+    }
+
+    function previous() {
+      // body...
+      $scope.dec = --j;
+      i = $scope.dec;
+      var url = 'https://api.themoviedb.org/3/tv/popular?api_key=ea12c869f716552bef3493abf72c3617&language=en-US&page='+$scope.dec;
+    
+          $http.get(url)
+          .then(function(success){
+              $scope.movies = success.data.results;
+              $scope.show = false;            
+              console.log(success.data.results);
+          },function(error){
+              console.log(error);
+              $scope.show = false;
+          });
+
+    }
 
          
       
