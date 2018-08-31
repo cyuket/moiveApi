@@ -50,14 +50,14 @@
                         <span>Menu</span>
                     </button>
                     <h2 style="margin-left: 10px; color: black">Popular Tv Show </h2>
-                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" ng-hide="showMe">
                         <i class="fas fa-align-justify"></i>
                         <span>Search</span>
                     </button>
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                        <ul class="nav navbar-nav ml-auto">
-                        <form class="form-inline">
+                        <form class="form-inline" ng-hide="showMe">
                         <div class="input-group">
                       
                             <input type="text" class="form-control" placeholder="Search" ng-model="search.name">
@@ -69,21 +69,39 @@
                         </ul> 
                     </div>
                 </div></nav>
-                 <div class="row" id="content">
-                <div ng-repeat = "movies in movies | filter:search" class="col-md-3" >
-                    <a href="details.html" target="_blank" ng-click="showDetails(movies.id)" value=detail>
+                <div class="row" id="content" >
+                     
+                    <div ng-repeat = "movies in movies | filter:search" class="col-md-3" ng-hide="showMe">
+                        <a >
                         <img src="https://image.tmdb.org/t/p/w500{{movies.poster_path}}" width="150px" height="270px"> <br>
                         {{movies.name}}  <br>
 
 
 
                         <span id="rate">Rating: <span style="color: white;">{{movies.vote_average}} </span><i id="rating" class="fa fa-star"></i></span>
-                    </a>
-                    <input type="button" class="btn btn-success" ng-click="showDetails(movies.id)" value="Detail">
+                        </a> <br>
+                        <input type="button" class="btn btn-success" ng-click="showDetails(movies.id)" value="Detail" ng-model="model.search">
+                    </div>
+                   <div ng-show="showMe">
+                    <div style="margin-left: 5px;">
+                            <h1>Name: {{detail.name}}</h1>
+                           <em style="margin-left: 3px;">{{detail.tagline}}</em>  
+                   
+                        </div>
+                       <img src="https://image.tmdb.org/t/p/w500{{detail.poster_path}}" width="400px" height="500px" id="img" style="float: center;">
+                       <p>
+                        <div style=" margin-left">
+                            <h2>Overview</h2>
+                            <p>{{detail.overview}}</p>
+                
+                        </div> </p>
+                        <button ng-click="myFunc()" class="btn btn-success">Back</button> 
+                   </div>
                 </div>        
             </div>   
         </div>
     </div>
+
 
     <!-- jQuery CDN - Slim version (=without AJAX) -->
    
